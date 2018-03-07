@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h1>Stack Implementation</h1>
+		<script>
+			class Stack{
+				constructor(){
+					this.result = [];
+					this.top = -1;
+				}
+
+				push(value){
+					this.top++;
+					return this.result.push(value);
+				}
+
+				pop(){
+					if (this.top == -1){
+						return "OUT OF BOUND";
+					}else{
+						this.top--;
+						return this.result.pop();	
+					}
+				}
+
+				peek(){
+					if (this.top == -1){
+						return "Empty Stack";
+					}else{
+						return this.result[this.top];
+					}
+				}
+
+				// Return Boolean Variables
+				isEmpty(){
+					if (this.top == -1){
+						return true;
+					}else{
+						return false;
+					}						
+				}
+			}
+
+			var obj1 = new Stack();
+			obj1.push("item1");
+			obj1.push("item2");
+			obj1.push("item3");
+			obj1.pop("item3");
+			obj1.isEmpty();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<h1>Queue Implementation</h1>
+		<script>
+			class Queue{
+				constructor(){
+					this.front = 0;
+					this.rear = 0;
+					this.queueResult = [];
+				}
+
+				isEmpty(){
+					return this.front == this.rear;
+				}
+
+				enqueue(value){
+					this.queueResult[this.rear] = value;
+					this.rear++;
+				}
+
+				dequeue(){
+					if (this.isEmpty()){
+						console.log("Underflow - No elements found");
+						return;
+					}
+					this.queueResult.shift();
+					this.rear--;
+				}
+
+				//Return the element at the front without removing it.
+				peek(){
+					return this.queueResult[this.front];
+				}
+			}
+
+			var obj1 = new Queue();
+			obj1.enqueue("item1");
+			obj1.enqueue("item2");
+			obj1.dequeue();
+			obj1.isEmpty();
+		</script>
+	</body>
+</html>
